@@ -13,6 +13,24 @@
    1.4 Relevância da Lógica Booleana  
    1.5 Inter-relação entre Circuitos Digitais e Fluxos de Decisão em Algoritmos
 2. Descrição Detalhada de Cada Porta Lógica
+   2.1 Porta AND (E)
+   2.2 Porta OR (OU)
+   2.3 Porta NOT (NÃO)
+   2.4 Porta NAND (NÃO-E)
+   2.5 Porta NOR (NÃO-OU)
+   2.6 Porta XOR (OU Exclusivo)
+   2.7 Porta XNOR (NÃO-OU Exclusivo)
+3. Aplicação em Lógica de Programação com Java
+   3.1 Operadores Booleanos em Java
+   3.2 Exemplos com Estruturas Condicionais (if/else)
+   3.3 Declaração de Variáveis Booleanas e Operações Diretas
+   3.4 Estruturas switch-case para Operações Lógicas
+4. Relação entre Circuitos Digitais e Algoritmos
+   4.1 Analogia entre Circuitos e Algoritmos
+   4.2 Representação de Circuitos como Algoritmos
+   4.3 Fluxogramas: Do Circuito ao Algoritmo
+   4.4 Casos Práticos
+5. Conclusão
 
 ---
 
@@ -138,11 +156,13 @@ Essa abordagem, fundamentada na álgebra booleana e em técnicas de simplificaç
 
 ## ✅ Python
 
+```plaintext
 | Operador |   Significado    |  Exemplo  |
 | :------: | :--------------: | :-------: |
 |  `and`   |  E lógico (AND)  | `a and b` |
 |   `or`   |  OU lógico (OR)  | `a or b`  |
 |  `not`   | NÃO lógico (NOT) |  `not a`  |
+```
 
 ### 1.3 Conceitos de Sinal Binário (0 e 1)
 
@@ -152,15 +172,19 @@ Esta simplicidade é o que torna os sistemas digitais tão robustos e confiávei
 
 Em termos de hardware, estes valores binários são tipicamente representados por níveis de tensão:
 
+```plaintext
 • O valor lógico 0 (baixo) geralmente corresponde a 0V ou tensão próxima de zero.
 
 • O valor lógico 1 (alto) geralmente corresponde a uma tensão positiva (como 3.3V, 5V ou outros valores, dependendo da tecnologia).
+```
 
 Em termos de software, estes valores são representados por tipos de dados booleanos, onde:
 
+```plaintext
 • false corresponde a 0
 
 • true corresponde a 1
+```
 
 ### 1.4 Relevância da Lógica Booleana
 
@@ -169,11 +193,13 @@ Esta álgebra trabalha com valores binários (verdadeiro ou falso) e define um c
 
 As três operações fundamentais da álgebra booleana são:
 
+```plaintext
 • AND (E): Resulta em verdadeiro apenas se ambos os operandos forem verdadeiros.
 
 • OR (OU): Resulta em verdadeiro se pelo menos um dos operandos for verdadeiro.
 
 • NOT (NÃO): Inverte o valor lógico (verdadeiro torna-se falso e vice-versa).
+```
 
 A partir destas operações básicas, podem ser derivadas outras operações como NAND, NOR, XOR e XNOR.
 
@@ -181,9 +207,11 @@ A partir destas operações básicas, podem ser derivadas outras operações com
 
 Existe uma relação intrínseca entre circuitos digitais e algoritmos. Ambos processam informações e tomam decisões baseadas em lógica booleana:
 
+```plaintext
 • Um circuito digital recebe sinais de entrada, processa-os através de portas lógicas e produz sinais de saída.
 
 • Um algoritmo recebe dados de entrada, processa-os através de operações lógicas e aritméticas, e produz resultados de saída.
+```
 
 Esta analogia não é coincidência. Os computadores digitais foram projetados para executar algoritmos, e suas estruturas internas de hardware refletem diretamente as estruturas lógicas dos algoritmos que executam.
 
@@ -199,9 +227,11 @@ A porta AND produz uma saída de valor 1 (verdadeiro) apenas quando todas as sua
 
 #### Símbolo Gráfico
 
+```plaintext
 A ---+
-|D--- Y = A AND B
+     |D--- Y = A AND B
 B ---+
+```
 
 ![Porta Lógica AND](/markdown/img/porta-logica-and-1.png)
 
@@ -209,7 +239,9 @@ O símbolo da porta AND assemelha-se a um D com a parte plana à direita, tendo 
 
 #### Expressão Algébrica
 
+```plaintext
 Y = A · B (ou A AND B)
+```
 
 Em Java:
 
@@ -219,11 +251,13 @@ Y = A && B
 
 ##### Tabela Verdade (para 2 entradas)
 
-A B Y (Saída)<br>
-0 0 0<br>
-0 1 0<br>
-1 0 0<br>
-1 1 1<br>
+```plaintext
+A B Y (Saída)
+0 0 0
+0 1 0
+1 0 0
+1 1 1
+```
 
 #### Exemplo de Circuito Básico
 
@@ -238,9 +272,11 @@ A saída é 0 (falso) apenas quando todas as entradas são 0 (falsas).
 
 #### Símbolo Gráfico
 
+```plaintext
     A ---\
          |>--- Y = A OR B<br>
     B ---/
+```
 
 O símbolo da porta OR assemelha-se a uma seta apontando para a direita com uma curvatura convexa na entrada.
 
@@ -248,7 +284,9 @@ O símbolo da porta OR assemelha-se a uma seta apontando para a direita com uma 
 
 ### Expressão Algébrica
 
+```plaintext
 Y = A + B (ou A OR B)
+```
 
 Em Java:
 
@@ -258,11 +296,13 @@ Y = A || B
 
 #### Tabela Verdade (para 2 entradas)
 
-A B Y (Saída)<br>
-0 0 0<br>
-0 1 1<br>
-1 0 1<br>
-1 1 1<br>
+```plaintext
+A B Y (Saída)
+0 0 0
+0 1 1
+1 0 1
+1 1 1
+```
 
 ### Exemplo de Circuito Básico
 
@@ -276,13 +316,17 @@ A porta NOT, também chamada de inversor, tem apenas uma entrada e uma saída. E
 
 ### Símbolo Gráfico
 
+```plaintext
 A ---o--- Y = NOT A
+```
 
 ![Porta Lógica NOT](/markdown/img/porta-not.png)
 
 ### Expressão Algébrica
 
+```plaintext
 Y = Ā (ou NOT A)
+```
 
 Em Java:
 
@@ -292,9 +336,11 @@ Y = !A
 
 #### Tabela Verdade
 
-A Y(Saída)<br>
-0 1<br>
-1 0<br>
+```plaintext
+A Y(Saída)
+0 1
+1 0
+```
 
 ### Exemplo de Circuito Básico
 
@@ -309,9 +355,11 @@ A porta NAND é a negação da porta AND. Ela produz uma saída 0 (falso) apenas
 
 #### Símbolo Gráfico
 
+```plaintext
 A ---+
-|D--o--- Y = A NAND B
+|    |D--o--- Y = A NAND B
 B ---+
+```
 
 ![Porta Lógica NAND(NÃO-E)](/markdown/img/porta-logica-nand.png)
 
@@ -319,7 +367,9 @@ O símbolo da porta NAND é idêntico ao da porta AND, mas com um pequeno círcu
 
 ### Expressão Algébrica
 
+```plaintext
 Y = (A · B)̄ (ou A NAND B)
+```
 
 Em Java:
 
@@ -329,11 +379,13 @@ Y = !(A && B)
 
 ## Tabela Verdade (para 2 entradas)
 
-A B Y(Saída)<br>
-0 0 1<br>
-0 1 1<br>
-1 0 1<br>
-1 1 0<br>
+```plaintext
+A B Y(Saída)
+0 0 1
+0 1 1
+1 0 1
+1 1 0
+```
 
 ## Exemplo de Circuito Básico
 
@@ -349,9 +401,11 @@ A porta NOR é a negação da porta OR. Ela produz uma saída 1 (verdadeiro) ape
 
 #### Símbolo Gráfico
 
+```plaintext
 A ---\
-|>--o--- Y = A NOR B  
+|>--o--- Y = A NOR B
 B ---/
+```
 
 ![Porta Lógica NOR(NÃO-OU)](/markdown/img/porta-logica-nor.png)
 
@@ -359,7 +413,9 @@ O símbolo da porta NOR é idêntico ao da porta OR, mas com um pequeno círculo
 
 ### Expressão Algébrica
 
+```plaintext
 Y = (A + B)̄ (ou A NOR B)
+```
 
 Em Java:
 
@@ -369,17 +425,19 @@ Y = !(A || B)
 
 #### Tabela Verdade (para 2 entradas)
 
-A B Y(Saída)<br>
-0 0 1<br>
-0 1 0<br>
-1 0 0<br>
-1 1 0<br>
+```plaintext
+A B Y(Saída)
+0 0 1
+0 1 0
+1 0 0
+1 1 0
+```
 
 ### Exemplo de Circuito Básico
 
 Assim como a porta NAND, a porta NOR também é uma porta universal. Um exemplo de aplicação é um sistema de economia de energia que desliga automaticamente um equipamento quando nenhum de seus sensores de movimento detecta atividade por um determinado período.
 
-2.6 Porta XOR (OU Exclusivo)
+## 2.6 Porta XOR (OU Exclusivo)
 
 ### Definição e Funcionamento
 
@@ -387,9 +445,11 @@ A porta XOR (Exclusive OR) produz uma saída 1 (verdadeiro) quando exatamente um
 
 ### Símbolo Gráfico
 
+```plaintext
 A ---\
 |>--- Y = A XOR B
 B ---/
+```
 
 ![Porta Lógica XOR(OU EXCLUSIVO)](/markdown/img/porta-logica-xor.png)
 
@@ -397,27 +457,31 @@ O símbolo da porta XOR é semelhante ao da porta OR, mas com uma linha adiciona
 
 ### Expressão Algébrica
 
+````plaintext
 Y = A ⊕ B (ou A XOR B)
+```plaintext
 
 Em Java:
 
 ```java
 Y = A ^ B
-```
+````
 
 #### Tabela Verdade (para 2 entradas)
 
-A B Y(Saída)<br>
-0 0 0<br>
-0 1 1<br>
-1 0 1<br>
-1 1 0<br>
+```plaintext
+A B Y(Saída)
+0 0 0
+0 1 1
+1 0 1
+1 1 0
+```
 
 ### Exemplo de Circuito Básico
 
 A porta XOR é frequentemente usada em circuitos aritméticos, como em um somador de bits onde a saída do XOR representa a soma sem considerar o carry. Outro exemplo é um circuito de detecção de paridade, usado para verificar erros em transmissão de dados.
 
-2.7 Porta XNOR (NÃO-OU Exclusivo)
+## 2.7 Porta XNOR (NÃO-OU Exclusivo)
 
 ### Definição e Funcionamento
 
@@ -425,9 +489,11 @@ A porta XNOR é a negação da porta XOR. Ela produz uma saída 1 (verdadeiro) q
 
 ### Símbolo Gráfico
 
+```plaintext
 A ---\
 |>--o--- Y = A XNOR B
 B ---/
+```
 
 ![Porta Lógica XNOR(OU EXCLUSIVO NÃO)](/markdown/img/porta-logica-xor.png)
 
@@ -435,7 +501,9 @@ O símbolo da porta XNOR é idêntico ao da porta XOR, mas com um pequeno círcu
 
 ### Expressão Algébrica
 
+```plaintext
 Y = (A ⊕ B)̄ (ou A XNOR B)
+```
 
 Em Java:
 
@@ -445,11 +513,13 @@ Y = !(A ^ B) ou Y = A == B
 
 #### Tabela Verdade (para 2 entradas)
 
-A B Y(Saída)<br>
-0 0 1<br>
-0 1 0<br>
-1 0 0<br>
-1 1 1<br>
+```plaintext
+A B Y(Saída)
+0 0 1
+0 1 0
+1 0 0
+1 1 1
+```
 
 ### Exemplo de Circuito Básico
 
@@ -482,9 +552,11 @@ Em Java, os operadores lógicos permitem combinar expressões booleanas para cri
 
 As portas NAND, NOR e XNOR não têm operadores dedicados em Java, mas podem ser implementadas combinando os operadores básicos.
 
+```plaintext
 - O operador `^` (XOR) em Java realiza a operação de OU Exclusivo **bit a bit**. Para aplicar XOR a booleanos, utiliza-se a expressão lógica `(a || b) && !(a && b)`.
 
 - Não existe um operador nativo para XNOR em Java. No entanto, para valores booleanos, o operador `==` pode ser utilizado para simular a operação de OU Exclusivo NÃO, pois retorna `true` quando ambos os valores são iguais (`true == true` ou `false == false`).
+```
 
 ## 3.2 Exemplos com Estruturas Condicionais (if/else)
 
@@ -670,28 +742,35 @@ public class CalculadoraLogica {
 
 Circuitos digitais e algoritmos são duas manifestações diferentes do mesmo conceito fundamental: o processamento lógico de informações. Esta relação pode ser entendida nos seguintes aspectos:
 
-### Elementos Fundamentais
+#### Elementos Fundamentais
 
+```plaintext
 • Circuitos Digitais: Utilizam portas lógicas como blocos de construção básicos.
 
 • Algoritmos: Utilizam instruções como blocos de construção básicos.
+```
 
-### Fluxo de Informação
+#### Fluxo de Informação
 
+```plaintext
 • Circuitos Digitais: Sinais elétricos fluem através de componentes físicos.
 
 • Algoritmos: Dados fluem através de instruções executadas sequencialmente.
+```
 
-### Transformação de Entrada em Saída
+#### Transformação de Entrada em Saída
 
+```plaintext
 • Circuitos Digitais: Transformam sinais de entrada em sinais de saída através de operações lógicas implementadas em hardware.
 
 • Algoritmos: Transformam dados de entrada em dados de saída através de operações lógicas implementadas em software.
+```
 
-## 4.2 Representação de Circuitos como Algoritmos
+### 4.2 Representação de Circuitos como Algoritmos
 
 Um circuito digital pode ser representado como um algoritmo seguindo estas etapas:
 
+```plaintext
 1. Identificar as entradas do circuito (variáveis booleanas)
 
 2. Mapear as conexões entre portas lógicas como expressões booleanas
@@ -699,6 +778,7 @@ Um circuito digital pode ser representado como um algoritmo seguindo estas etapa
 3. Traduzir as expressões booleanas em instruções condicionais
 
 4. Definir as saídas do algoritmo com base nas avaliações dessas expressões
+```
 
 ### Exemplo: Circuito Somador de 1 Bit
 
@@ -744,24 +824,28 @@ public class Somador1Bit {
 
 Para ilustrar a transição de um circuito digital para um algoritmo, podemos utilizar fluxogramas que representam o mesmo processo lógico:
 
-### Representação de um Circuito AND-OR
+#### Representação de um Circuito AND-OR
 
+```plaintext
 Entrada A ---+
-|AND1--- +
-Entrada B ---+
-|OR--- Saída
-Entrada C ---+
-|AND2 ---+
+              |AND1---+
+Entrada B ---+        |
+                       |OR--- Saída
+Entrada C ---+        |
+              |AND2---+
 Entrada D ---+
+```
 
-### Fluxograma do Algoritmo Equivalente
+#### Fluxograma do Algoritmo Equivalente
 
+```plaintext
 [ Início ] → [ Ler A, B, C, D ] → [ Calcular AND1 = A AND B ]
-→ [ Calcular AND2 = C AND D ]
-→ [ Calcular Saída = AND1 OR AND2 ]
-→ [Exibir Saída] → [ Fim ]
+            → [ Calcular AND2 = C AND D ]
+            → [ Calcular Saída = AND1 OR AND2 ]
+            → [ Exibir Saída ] → [ Fim ]
+```
 
-Algoritmo em Java
+### Algoritmo em Java
 
 ```java
 // Algoritmo em Java
@@ -779,6 +863,7 @@ Exemplo 1: Sistema de Controle de Acesso
 
 Descrição do Sistema: Um sistema de controle de acesso que verifica múltiplos fatores:
 
+```plaintext
 • Cartão de acesso válido (A)
 
 • Senha correta (B)
@@ -786,18 +871,21 @@ Descrição do Sistema: Um sistema de controle de acesso que verifica múltiplos
 • Horário autorizado (C)
 
 • Não estar em lista de bloqueio (D)
+```
 
-### Circuito Digital:
+#### Circuito Digital:
 
+```plaintext
 A ---+
-|AND1--- +
-B ---+ |
-|AND3--- Acesso Concedido
-C ---+ |
-|AND2--- +
-D\*---+
+     |AND1---+
+B ---+       |
+             |AND3--- Acesso Concedido
+C ---+       |
+     |AND2---+
+D*---+
+```
 
-(\*D é invertido antes de entrar no AND2)
+(D é invertido\* antes de entrar no AND2)
 
 ### Algoritmo em Java:
 
@@ -821,6 +909,7 @@ public boolean verificarAcesso(
 
 Descrição do Sistema: Um sistema de alarme que monitora:
 
+```plaintext
 • Sensor de movimento (A)
 
 • Sensor de porta (B)
@@ -828,16 +917,20 @@ Descrição do Sistema: Um sistema de alarme que monitora:
 • Sensor de janela (C)
 
 • Sistema está armado (D)
+```
 
-### Circuito Digital:
+#### Circuito Digital
+
+```plaintext
 
 A ---+
-|
+     |
 B ---+--OR1--+
-| |
-C ---+ |AND--- Alarme Disparado
-|
+     |       |
+C ---+-------|AND--- Alarme Disparado
+     |
 D -----------+
+```
 
 ```java
 // Algoritmo em Java
@@ -846,11 +939,27 @@ public boolean verificarAlarme(
     boolean sensorPorta,
     boolean sensorJanela,
     boolean sistemaArmado
-) {
-    // O alarme dispara se:
-    // Qualquer sensor for ativado E o sistema estiver armado
+) {    // O alarme dispara se:
+  // Qualquer sensor for ativado E o sistema estiver armado
     boolean sensorAtivado = sensorMovimento || sensorPorta || sensorJanela;
-    boolean alarmeDisparado = sensorAtivado && sistemaArmado;
+   boolean alarmeDisparado = sensorAtivado && sistemaArmado;
     return alarmeDisparado;
 }
 ```
+
+## 5. Conclusão
+
+O estudo de portas lógicas, álgebra booleana, algoritmos e lógica de programação com Java proporciona uma base sólida para o desenvolvimento de sistemas computacionais eficientes e inteligentes.  
+Compreender o funcionamento das portas lógicas e a manipulação de variáveis booleanas é essencial para criar algoritmos mais seguros, otimizados e assertivos.  
+Além disso, a prática com Java permite aplicar esses conceitos de maneira prática e moderna, preparando o desenvolvedor para enfrentar os desafios do mercado de tecnologia.
+
+Agradecemos por acompanhar este material! Esperamos que ele tenha contribuído positivamente para seu aprendizado e evolução na área de desenvolvimento de sistemas.
+
+---
+
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
+
+**Desenvolvido por:**  
+Wilker Junio Coelho Pimenta  
+Curso de Análise e Desenvolvimento de Sistemas  
+Universidade Católica de Brasília
