@@ -2,15 +2,16 @@
 
 ## Aplicações em Circuitos Digitais e Lógica de Programação
 
----
-
 ### Sumário
 
-1. Introdução  
-   1.1 A Importância das Portas Lógicas  
-   1.2 Operadores Lógicos em Diversas Linguagens de Programação  
-   1.3 Conceitos de Sinal Binário (0 e 1)  
-   1.4 Relevância da Lógica Booleana  
+---
+
+```plaintext
+1. Introdução
+   1.1 A Importância das Portas Lógicas
+   1.2 Operadores Lógicos em Diversas Linguagens de Programação
+   1.3 Conceitos de Sinal Binário (0 e 1)
+   1.4 Relevância da Lógica Booleana
    1.5 Inter-relação entre Circuitos Digitais e Fluxos de Decisão em Algoritmos
 2. Descrição Detalhada de Cada Porta Lógica
    2.1 Porta AND (E)
@@ -31,6 +32,7 @@
    4.3 Fluxogramas: Do Circuito ao Algoritmo
    4.4 Casos Práticos
 5. Conclusão
+```
 
 ---
 
@@ -457,15 +459,15 @@ O símbolo da porta XOR é semelhante ao da porta OR, mas com uma linha adiciona
 
 ### Expressão Algébrica
 
-````plaintext
-Y = A ⊕ B (ou A XOR B)
 ```plaintext
+Y = A ⊕ B (ou A XOR B)
+```
 
 Em Java:
 
 ```java
 Y = A ^ B
-````
+```
 
 #### Tabela Verdade (para 2 entradas)
 
